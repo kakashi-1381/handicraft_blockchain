@@ -65,7 +65,7 @@ def verify_product(product_id):
 # Main app function
 def app():
     # Capture product ID from the URL using `st.query_params()` (the new method)
-    product_id = st.query_params().get("product_id", [None])[0]
+    product_id = st.query_params.get("product_id", [None])[0]
 
     if product_id:
         verify_product(product_id)
@@ -101,3 +101,4 @@ def app():
 
 if __name__ == "__main__":
     app()
+

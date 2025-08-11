@@ -64,8 +64,8 @@ def verify_product(product_id):
 
 # Main app function
 def app():
-    # Capture product ID from the URL
-    product_id = st.experimental_get_query_params().get("product_id", [""])[0]
+    # Capture product ID from the URL using `st.query_params()` (the new method)
+    product_id = st.query_params().get("product_id", [None])[0]
 
     if product_id:
         verify_product(product_id)
